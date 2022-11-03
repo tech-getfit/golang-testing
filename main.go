@@ -11,7 +11,7 @@ func main() {
 	router := httprouter.New()
 
 	router.GET("/", func(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
-		fmt.Fprint(rw, "Hello Get")
+		fmt.Fprint(rw, "Hello World")
 	})
 
 	server := http.Server{
