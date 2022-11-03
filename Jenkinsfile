@@ -1,9 +1,13 @@
 pipeline{
-    agent any
+    agent {
+        node {
+            label "fe"
+        }
+    }
     stages {
         stage("Hello"){
             steps{
-                echo("Hello")
+                sh 'go version'
             }
         }
     }
