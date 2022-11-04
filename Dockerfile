@@ -8,6 +8,6 @@ COPY go.sum ./
 RUN go mod download
 COPY ./ ./
 
-RUN go build -o /product-go-micro
+RUN go build -o /testing-service
 
-CMD [ "/product-go-micro" ]
+CMD [ "/testing-service" ]
