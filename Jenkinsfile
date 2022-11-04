@@ -9,11 +9,15 @@ pipeline{
     }
     environment {
         GO111MODULE = 'on'
+        CGO_ENABLED = 0
     }
     stages {
-        stage("Hello"){
-            steps{
+        stage("Build"){
+            steps {
+                echo 'BUILD EXECUTION STARTED'
                 sh 'go version'
+                sh 'go get ./...'
+                sh 'docker build -t registry.gitlab.com/getfit-tech/golang-test .'
             }
         }
     }
